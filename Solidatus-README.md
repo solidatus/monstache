@@ -20,3 +20,7 @@ Golang has 3 vulnerabilities CVE-2023-24540, CVE-2023-29400, CVE-2023-24539 whic
 # 2023-08-24
 
 Golang has 3 vulnerabilities CVE-2023-29409, CVE-2023-29406, CVE-2023-39533 which were fixed in 1.20.7 hence manually updated go.mod to use 1.21. (latest on main branch was 1.20)
+
+# 2023-10-18
+
+Golang has 1 vulnerability CVE-2023-39320 which was fixed in 1.21.3 hence manually updated go.mod to use 1.21.3. (latest on main branch was 1.21)
