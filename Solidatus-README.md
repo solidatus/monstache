@@ -51,4 +51,12 @@ Golang has 2 vulnerabilities CVE-2024-45336, CVE-2024-45341 which was fixed in 1
 
 2024-02-24
 
-Golang has 1 vulnerablity CVE-2025-22866 which was fixed in 1.23.6 hence manually updated go.mod to use 1.23.6.
+Golang has 1 vulnerability CVE-2025-22866 which was fixed in 1.23.6 hence manually updated go.mod to use 1.23.6.
+
+# 2024-04-28
+
+Golang has 1 vulnerability CVE-2025-22869 which was fixed in golang.org/x/crypto v0.35.0.The versions of golang.org/x/text v0.22.0, golang.org/x/sync v0.11.0 and golang.org/x/sys v0.30.0 bumped as related packages for golang.org/x/crypto v0.35.0.
+
+# 2024-04-28
+
+Golang has 1 vulnerability CVE-2025-22871 which was fixed in 1.23.8 hence manually updated go.mod to use 1.23.8.
