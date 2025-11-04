@@ -23,3 +23,6 @@ a `Session` field typed as a `*mgo.Session`.  Now that has been replaced with a 
 `*mongo.Client`. 
 
 See the MongoDB go driver docs for details on how to use this client.
+
+
+<!-- SOL-17460: Security update for CVE-2025-47907, CVE-2024-34156 -->
