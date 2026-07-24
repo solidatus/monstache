@@ -108,3 +108,6 @@ CVE-2026-39834, CVE-2026-39833, CVE-2026-39832, CVE-2026-39831, CVE-2026-2303 an
 
 # 2026-07-20
 Golang has 2 vulnerabilities CVE-2026-42505, CVE-2026-39822 which were fixed in 1.26.5, hence manually updated go.mod to use 1.26.5 (latest on main branch was 1.26.4).
+
+# 2026-07-23
+MongoDB Go driver has 1 vulnerability CVE-2026-2303 which was fixed by upgrading go.mongodb.org/mongo-driver to v1.17.7, hence updated go.mod and go.sum to use go.mongodb.org/mongo-driver v1.17.7 (latest on main branch was v1.11.4). The version of github.com/rwynn/gtm/v2 was bumped to v2.1.5 as a related package for go.mongodb.org/mongo-driver v1.17.7.

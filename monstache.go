@@ -52,7 +52,6 @@ import (
 	"go.mongodb.org/mongo-driver/mongo/gridfs"
 	"go.mongodb.org/mongo-driver/mongo/options"
 	mongoversion "go.mongodb.org/mongo-driver/version"
-	"go.mongodb.org/mongo-driver/x/bsonx"
 	"gopkg.in/Graylog2/go-gelf.v2/gelf"
 	"gopkg.in/natefinch/lumberjack.v2"
 )
@@ -82,7 +81,7 @@ var chunksRegex = regexp.MustCompile("\\.chunks$")
 var systemsRegex = regexp.MustCompile("system\\..+$")
 var exitStatus = 0
 
-const version = "6.7.10+23"
+const version = "6.7.10+24"
 const mongoURLDefault string = "mongodb://localhost:27017"
 const resumeNameDefault string = "default"
 const elasticMaxConnsDefault int = 4
@@ -5041,20 +5040,15 @@ func (ic *indexClient) saveTimestampFromServerStatus() {
 		"serverStatus": 1,
 	})
 	if err = result.Err(); err == nil {
-		doc := &bsonx.Doc{}
-		if err = result.Decode(doc); err == nil {
-			var elem bsonx.Val
-			elem, err = doc.LookupErr("operationTime")
-			if err != nil {
-				ic.processErr(err)
+		var status struct {
+			OperationTime primitive.Timestamp `bson:"operationTime"`
+		}
+		if err = result.Decode(&status); err == nil {
+			if status.OperationTime.T == 0 {
+				ic.processErr(fmt.Errorf("operationTime missing or invalid in serverStatus"))
 				return
 			}
-			if elem.Type() != bson.TypeTimestamp {
-				err = fmt.Errorf("incorrect type for 'operationTime'. got %v. want %v", elem.Type(), bson.TypeTimestamp)
-				ic.processErr(err)
-				return
-			}
-			ic.lastTs = elem.Interface().(primitive.Timestamp)
+			ic.lastTs = status.OperationTime
 			if err = ic.saveTimestamp(); err != nil {
 				ic.processErr(err)
 			}
