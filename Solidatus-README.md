@@ -114,3 +114,6 @@ MongoDB Go driver has 1 vulnerability CVE-2026-2303 which was fixed by upgrading
 
 # 2026-07-29
 Go module dependency golang.org/x/text has 1 vulnerability CVE-2026-56852, which is fixed in golang.org/x/text v0.39.0. Updated go.mod and go.sum to use golang.org/x/text v0.39.0 (latest on main branch was v0.37.0). The version of golang.org/x/sync was bumped to v0.21.0 as a related package for golang.org/x/text v0.39.0.
+
+# 2026-08-14
+Golang has 10 vulnerabilities CVE-2026-39821, CVE-2026-46600, CVE-2026-56865, CVE-2026-56864, CVE-2026-56862, CVE-2026-56860, CVE-2026-56859, CVE-2026-56858, CVE-2026-56853 and CVE-2026-33818 which were fixed in 1.26.6 hence manually updated go.mod to use 1.26.6 (latest on main branch was 1.26.5).
