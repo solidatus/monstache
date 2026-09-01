@@ -117,3 +117,6 @@ Go module dependency golang.org/x/text has 1 vulnerability CVE-2026-56852, which
 
 # 2026-08-14
 Golang has 10 vulnerabilities CVE-2026-39821, CVE-2026-46600, CVE-2026-56865, CVE-2026-56864, CVE-2026-56862, CVE-2026-56860, CVE-2026-56859, CVE-2026-56858, CVE-2026-56853 and CVE-2026-33818 which were fixed in 1.26.6 hence manually updated go.mod to use 1.26.6 (latest on main branch was 1.26.5).
+
+# 2026-09-01
+Go module dependency golang.org/x/crypto has 1 vulnerability CVE-2026-56854, which is fixed in golang.org/x/crypto v0.55.0. Updated go.mod and go.sum to use golang.org/x/crypto v0.55.0 (latest on main branch was v0.52.0). The versions of golang.org/x/sync v0.22.0, golang.org/x/sys v0.47.0 and golang.org/x/text v0.41.0 were bumped as related packages for golang.org/x/crypto v0.55.0.
